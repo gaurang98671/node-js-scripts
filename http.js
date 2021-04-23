@@ -10,7 +10,8 @@ const server = http.createServer((req, res)=>{
     }
     else{
         res.end(
-            '<h1>404 not found</h1>')
+            '<h1>404 not found</h1>'+
+            '<a href = "/"> back home')
     }
 })
 

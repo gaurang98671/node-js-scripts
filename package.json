@@ -1,0 +1,19 @@
+{
+  "name": "js-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Async.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaurang98671/node-js-scripts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaurang98671/node-js-scripts/issues"
+  },
+  "homepage": "https://github.com/gaurang98671/node-js-scripts#readme"
+}
