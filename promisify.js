@@ -1,12 +1,16 @@
-const {readFile} = require('fs')
-const util = require('util')
+const { userInfo } = require('os');
+const util = require('util');
 
-const readFilePromise = util.promisify(readFile)
-
-const start = async()=>{
-    const first = await readFilePromise("./test.txt", 'utf-8')
-    console.log(first)
-    console.log("Hello world")
+const test_callback = function (val, callback){
+    console.log("Inside test_callback function")
+    return new Promise((resolve, reject)=>{
+        resolve("hello")
+    })
+  
 }
 
-start()
+const foo = ()=> console.log('foo')
+
+test_callback(1)
+foo()
+

@@ -1,18 +1,10 @@
-const getText = (path)=>{
-    return new Promise((resolve, reject)=>{
-      if(path===1){
-          resolve(path)
-      }
-      else{
-          reject(path)
-      }
-    })
-}
+const { cpuUsage } = require('process')
+const util = require('util')
 
-const start = async() =>{
-    const first = getText(1).then((path)=>console.log(path));
-    console.log("Hello world")
-}
+const foo =()=>console.log("foo")
+const bar =()=>console.log("bar")
+const f = util.promisify(foo)
 
-start()
+f()
+bar()
 

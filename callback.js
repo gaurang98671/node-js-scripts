@@ -10,8 +10,7 @@ const bar = async ()=>console.log("bar")
 const baz = async ()=>console.log("baz")
 
 
-
-await test_callback(2, val=>{
+test_callback(2, val=>{
     setTimeout(bar,10000)
     
     console.log("calling callback function")
