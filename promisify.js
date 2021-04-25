@@ -2,7 +2,7 @@ const { userInfo } = require('os');
 const util = require('util');
 
 const test_callback = function (val, callback){
-    console.log("Inside test_callback function")
+   
     return new Promise((resolve, reject)=>{
         resolve("hello")
     })
@@ -11,6 +11,6 @@ const test_callback = function (val, callback){
 
 const foo = ()=> console.log('foo')
 
-test_callback(1)
+test_callback(1).then((val)=>console.log(val))
 foo()
 
