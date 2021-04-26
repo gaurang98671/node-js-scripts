@@ -1,9 +1,11 @@
 const express = require('express');
+const path = require('path');
 const app = express()
 
+app.use(express.static('./nav-bar'))
 //app.get
 app.get('/', (req, res)=>{
-    res.end("Home page")
+    res.sendFile(path.resolve(__dirname, './nav-bar/index.html'))
 })
 
 app.get("/about", (req, res)=>{
