@@ -9,7 +9,7 @@ app.get('/', (req, res)=>{
 })
 
 app.get("/about", (req, res)=>{
-    res.end("About page")
+    res.sendFile(path.resolve(__dirname, './nav-bar/about.html'))
 })
 
 app.get('/greet', (req, res)=>{
