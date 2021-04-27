@@ -26,13 +26,22 @@ app.get('/map/users', (req, res)=>{
 app.get('/find/user/:userName', (req, res)=>{
     const {userName} = req.params
     const user = arr.find((user)=> user.name=== userName)
-
+    
     if(!user){
         return res.send("User does not exists")
     }
     return res.json(user)
 })
 
+app.get('/query',(req, res)=>{
+    const {limit} = req.query
+    let sortedUsers= [...arr]
+    sortedUsers = arr.filter((user)=>{
+        return user.name.startsWith(limit)
+    })
+
+    res.json(sortedUsers)
+})
 app.listen(5000, ()=>{
     console.log("Listening on 5000...")
 })
