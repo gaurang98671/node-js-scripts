@@ -34,13 +34,19 @@ app.get('/find/user/:userName', (req, res)=>{
 })
 
 app.get('/query',(req, res)=>{
-    const {limit} = req.query
+    const {query} = req.query
     let sortedUsers= [...arr]
     sortedUsers = arr.filter((user)=>{
-        return user.name.startsWith(limit)
+        return user.name.startsWith(query)
     })
 
+
     res.json(sortedUsers)
+})
+
+app.get('/limit', (req, res)=>{
+    const { limit } = req.query
+    res.json(arr.slice(0, limit))
 })
 app.listen(5000, ()=>{
     console.log("Listening on 5000...")
