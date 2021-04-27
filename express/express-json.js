@@ -26,7 +26,11 @@ app.get('/map/users', (req, res)=>{
 app.get('/find/user/:userName', (req, res)=>{
     const {userName} = req.params
     const user = arr.find((user)=> user.name=== userName)
-    res.json(user)
+
+    if(!user){
+        return res.send("User does not exists")
+    }
+    return res.json(user)
 })
 
 app.listen(5000, ()=>{
