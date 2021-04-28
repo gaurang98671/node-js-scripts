@@ -1,4 +1,9 @@
-var book = require('./book.js')
-//var mod = require('./node_modules/my-awesome-nodejs-module')
-var book1 = new book();
+const express = require('express')
+const basic = require('./routes/routers')
+const app = express()
 
+app.use('/api', basic)
+
+app.listen(5000, ()=>{
+    console.log("Listening on port 5000...")
+})
