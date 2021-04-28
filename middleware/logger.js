@@ -1,18 +1,13 @@
 const express = require('express')
+const logger = require('./middlewares')
 
 const app = express()
+app.use(logger)
 
-const logger = (req, res, next)=>{
-    const method = req.method
-    const url = req.url
-    const date = new Date().getTime()
-    console.log(method, url, date)
-    next()
-}
-
-app.get('/', logger,(req, res)=>{
+app.get('/', (req, res)=>{
     res.send("Home page")
 })
+
 
 app.listen(5000, ()=>{
     console.log("Listening on port 5000...")
