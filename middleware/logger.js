@@ -7,7 +7,9 @@ app.use(logger)
 app.use(logger2)
 app.use(authorizer)
 app.get('/', (req, res)=>{
-    res.send("Home page")
+    const {userName, id} = req.user
+    res.send("Hello "+ userName)
+
 })
 
 
