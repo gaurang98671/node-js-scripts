@@ -9,6 +9,7 @@ const logger = (req, res, next)=>{
 
 const logger2 = (req, res, next)=>{
     console.log("Logger 2")
+    
     next()
 }
 
