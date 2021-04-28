@@ -1,16 +1,19 @@
+const { json } = require('express');
 const express = require('express')
 const {logger, logger2} = require('./middlewares')
-const authorizer = require('./auth')
-
 const app = express()
-app.use(logger)
-app.use(logger2)
-app.use(authorizer)
-app.get('/', (req, res)=>{
-    const {userName, id} = req.user
-    res.send("Hello "+ userName)
 
+app.use(express.json())
+app.use(express.urlencoded({extended : true}));
+app.get('/', (req, res)=>{
+    res.send("welcome")
 })
+app.post('/data', (req, res)=>{ 
+    console.log(req.body)
+    res.send("Hello")
+})
+
+
 
 
 app.listen(5000, ()=>{
