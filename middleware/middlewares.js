@@ -7,4 +7,12 @@ const logger = (req, res, next)=>{
     next()
 }
 
-module.exports = logger
+const logger2 = (req, res, next)=>{
+    console.log("Logger 2")
+    next()
+}
+
+module.exports = {
+    logger, 
+    logger2
+}
